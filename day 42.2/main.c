@@ -1,15 +1,20 @@
-//
-//  main.c
-//  day 42.2
-//
-//  Created by Sanaa Kumar on 26/11/25.
-//
-
-#include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return EXIT_SUCCESS;
+int main(void) {
+    char str[100];
+    int i;
+
+    printf("Enter a lowercase string: ");
+    scanf("%[^\n]", str);
+
+    for(i = 0; str[i] != '\0'; i++) {
+        if(str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32;
+        }
+    }
+
+    printf("Uppercase string: %s\n", str);
+
+    return 0;
 }
+
